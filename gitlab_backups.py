@@ -24,6 +24,6 @@ with DAG(
     config = Variable.get('gitlab_backups'),
     run_this = BashOperator(
     task_id = 'gitlab_backups',
-    bash_command = r'path_to_file/gitlab_backup.sh --config ',
+    bash_command = r'path_to_file/gitlab_backup.sh --ACCESS_TOKEN{{config}} ',
     dag = dag,    
     )
